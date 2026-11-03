@@ -1,0 +1,101 @@
+state,year,population,population_series,state_name
+AK,2015,739120,2010-2020 intercensal (Nov 2024),Alaska
+AK,2016,743397,2010-2020 intercensal (Nov 2024),Alaska
+AK,2017,741937,2010-2020 intercensal (Nov 2024),Alaska
+AK,2018,737710,2010-2020 intercensal (Nov 2024),Alaska
+AK,2019,734820,2010-2020 intercensal (Nov 2024),Alaska
+AK,2020,732906,2025 vintage (NST-EST2025),Alaska
+AK,2021,734590,2025 vintage (NST-EST2025),Alaska
+AK,2022,733659,2025 vintage (NST-EST2025),Alaska
+AK,2023,734654,2025 vintage (NST-EST2025),Alaska
+AK,2024,736537,2025 vintage (NST-EST2025),Alaska
+AK,2025,737270,2025 vintage (NST-EST2025),Alaska
+AL,2015,4909177,2010-2020 intercensal (Nov 2024),Alabama
+AL,2016,4931579,2010-2020 intercensal (Nov 2024),Alabama
+AL,2017,4953096,2010-2020 intercensal (Nov 2024),Alabama
+AL,2018,4977088,2010-2020 intercensal (Nov 2024),Alabama
+AL,2019,5003778,2010-2020 intercensal (Nov 2024),Alabama
+AL,2020,5032962,2025 vintage (NST-EST2025),Alabama
+AL,2021,5050058,2025 vintage (NST-EST2025),Alabama
+AL,2022,5076868,2025 vintage (NST-EST2025),Alabama
+AL,2023,5117850,2025 vintage (NST-EST2025),Alabama
+AL,2024,5163055,2025 vintage (NST-EST2025),Alabama
+AL,2025,5193088,2025 vintage (NST-EST2025),Alabama
+AR,2015,2970210,2010-2020 intercensal (Nov 2024),Arkansas
+AR,2016,2980475,2010-2020 intercensal (Nov 2024),Arkansas
+AR,2017,2990702,2010-2020 intercensal (Nov 2024),Arkansas
+AR,2018,2997195,2010-2020 intercensal (Nov 2024),Arkansas
+AR,2019,3004206,2010-2020 intercensal (Nov 2024),Arkansas
+AR,2020,3014399,2025 vintage (NST-EST2025),Arkansas
+AR,2021,3027127,2025 vintage (NST-EST2025),Arkansas
+AR,2022,3047429,2025 vintage (NST-EST2025),Arkansas
+AR,2023,3069856,2025 vintage (NST-EST2025),Arkansas
+AR,2024,3096080,2025 vintage (NST-EST2025),Arkansas
+AR,2025,3114791,2025 vintage (NST-EST2025),Arkansas
+AZ,2015,6705607,2010-2020 intercensal (Nov 2024),Arizona
+AZ,2016,6793278,2010-2020 intercensal (Nov 2024),Arizona
+AZ,2017,6872380,2010-2020 intercensal (Nov 2024),Arizona
+AZ,2018,6964300,2010-2020 intercensal (Nov 2024),Arizona
+AZ,2019,7067695,2010-2020 intercensal (Nov 2024),Arizona
+AZ,2020,7186647,2025 vintage (NST-EST2025),Arizona
+AZ,2021,7274022,2025 vintage (NST-EST2025),Arizona
+AZ,2022,7370065,2025 vintage (NST-EST2025),Arizona
+AZ,2023,7452073,2025 vintage (NST-EST2025),Arizona
+AZ,2024,7556424,2025 vintage (NST-EST2025),Arizona
+AZ,2025,7623818,2025 vintage (NST-EST2025),Arizona
+CA,2015,38966939,2010-2020 intercensal (Nov 2024),California
+CA,2016,39223789,2010-2020 intercensal (Nov 2024),California
+CA,2017,39424315,2010-2020 intercensal (Nov 2024),California
+CA,2018,39535920,2010-2020 intercensal (Nov 2024),California
+CA,2019,39547995,2010-2020 intercensal (Nov 2024),California
+CA,2020,39527808,2025 vintage (NST-EST2025),California
+CA,2021,39152927,2025 vintage (NST-EST2025),California
+CA,2022,39125347,2025 vintage (NST-EST2025),California
+CA,2023,39181667,2025 vintage (NST-EST2025),California
+CA,2024,39364774,2025 vintage (NST-EST2025),California
+CA,2025,39355309,2025 vintage (NST-EST2025),California
+CO,2015,5441452,2010-2020 intercensal (Nov 2024),Colorado
+CO,2016,5528510,2010-2020 intercensal (Nov 2024),Colorado
+CO,2017,5599635,2010-2020 intercensal (Nov 2024),Colorado
+CO,2018,5676918,2010-2020 intercensal (Nov 2024),Colorado
+CO,2019,5735797,2010-2020 intercensal (Nov 2024),Colorado
+CO,2020,5786873,2025 vintage (NST-EST2025),Colorado
+CO,2021,5814368,2025 vintage (NST-EST2025),Colorado
+CO,2022,5853355,2025 vintage (NST-EST2025),Colorado
+CO,2023,5912240,2025 vintage (NST-EST2025),Colorado
+CO,2024,5988502,2025 vintage (NST-EST2025),Colorado
+CO,2025,6012561,2025 vintage (NST-EST2025),Colorado
+CT,2015,3611891,2010-2020 intercensal (Nov 2024),Connecticut
+CT,2016,3607614,2010-2020 intercensal (Nov 2024),Connecticut
+CT,2017,3607550,2010-2020 intercensal (Nov 2024),Connecticut
+CT,2018,3611229,2010-2020 intercensal (Nov 2024),Connecticut
+CT,2019,3607133,2010-2020 intercensal (Nov 2024),Connecticut
+CT,2020,3579643,2025 vintage (NST-EST2025),Connecticut
+CT,2021,3607765,2025 vintage (NST-EST2025),Connecticut
+CT,2022,3618707,2025 vintage (NST-EST2025),Connecticut
+CT,2023,3641369,2025 vintage (NST-EST2025),Connecticut
+CT,2024,3674449,2025 vintage (NST-EST2025),Connecticut
+CT,2025,3688496,2025 vintage (NST-EST2025),Connecticut
+DC,2015,665135,2010-2020 intercensal (Nov 2024),District of Columbia
+DC,2016,673428,2010-2020 intercensal (Nov 2024),District of Columbia
+DC,2017,680670,2010-2020 intercensal (Nov 2024),District of Columbia
+DC,2018,685476,2010-2020 intercensal (Nov 2024),District of Columbia
+DC,2019,687320,2010-2020 intercensal (Nov 2024),District of Columbia
+DC,2020,670958,2025 vintage (NST-EST2025),District of Columbia
+DC,2021,669637,2025 vintage (NST-EST2025),District of Columbia
+DC,2022,674501,2025 vintage (NST-EST2025),District of Columbia
+DC,2023,682559,2025 vintage (NST-EST2025),District of Columbia
+DC,2024,691310,2025 vintage (NST-EST2025),District of Columbia
+DC,2025,693645,2025 vintage (NST-EST2025),District of Columbia
+DE,2015,944716,2010-2020 intercensal (Nov 2024),Delaware
+DE,2016,953146,2010-2020 intercensal (Nov 2024),Delaware
+DE,2017,961604,2010-2020 intercensal (Nov 2024),Delaware
+DE,2018,971152,2010-2020 intercensal (Nov 2024),Delaware
+DE,2019,981340,2010-2020 intercensal (Nov 2024),Delaware
+DE,2020,991890,2025 vintage (NST-EST2025),Delaware
+DE,2021,1005130,2025 vintage (NST-EST2025),Delaware
+DE,2022,1020279,2025 vintage (NST-EST2025),Delaware
+DE,2023,1035354,2025 vintage (NST-EST2025),Delaware
+DE,2024,1050123,2025 vintage (NST-EST2025),Delaware
+DE,2025,1059952,2025 vintage (NST-EST2025),Delaware
+FL,2015,20140379,2010-2020 intercensal (Nov 2024),Florida

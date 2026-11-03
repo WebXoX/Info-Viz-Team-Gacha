@@ -1,0 +1,101 @@
+year,airport_id,carrier_id,passengers,freight_lb,mail_lb,passengers_rank,freight_lb_rank,mail_lb_rank,scope,airport,city,state,carrier_code
+2015,10005,20408.0,184.0,11251.0,3516.0,3996,2076,877,all_classes,05A,"Little Squaw, AK",AK,5V
+2015,10006,20443.0,1.0,0.0,0.0,6189,,,all_classes,06A,"Kizhuyak, AK",AK,2O
+2015,10008,20439.0,15.0,0.0,0.0,5523,,,all_classes,08A,"Elizabeth Island, AK",AK,HB
+2015,10011,20424.0,37235.0,0.0,0.0,1409,,,all_classes,1G4,"Peach Springs, AZ",AZ,YR
+2015,10011,21236.0,4869.0,0.0,0.0,2308,,,all_classes,1G4,"Peach Springs, AZ",AZ,0JQ
+2015,10015,20443.0,16.0,126.0,0.0,5495,3264,,all_classes,A02,"Deadmans Bay, AK",AK,2O
+2015,10016,20439.0,427.0,0.0,0.0,3439,,,all_classes,A03,"Hallo Bay, AK",AK,HB
+2015,10016,20319.0,1.0,0.0,0.0,6189,,,all_classes,A03,"Hallo Bay, AK",AK,2E
+2015,10016,20443.0,0.0,0.0,0.0,,,,all_classes,A03,"Hallo Bay, AK",AK,2O
+2015,10017,20443.0,2.0,0.0,0.0,6056,,,all_classes,A04,"Red Lake, AK",AK,2O
+2015,10020,20330.0,0.0,1724.0,1572.0,,2817,980,all_classes,A07,"Selawik, AK",AK,7S
+2015,10033,20330.0,0.0,0.0,0.0,,,,all_classes,A20,"Alpine, AK",AK,7S
+2015,10039,20336.0,13.0,0.0,0.0,5556,,,all_classes,A26,"Ivotuk, AK",AK,H6
+2015,10040,20323.0,69.0,0.0,0.0,4848,,,all_classes,A27,"Pogo Mines, AK",AK,4W
+2015,10042,20443.0,43.0,0.0,0.0,5116,,,all_classes,A29,"Kiluda Bay, AK",AK,2O
+2015,10053,20336.0,3.0,0.0,0.0,5980,,,all_classes,A40,"Cape Simpson, AK",AK,H6
+2015,10056,20443.0,0.0,0.0,0.0,,,,all_classes,A43,"Kodiak Island, AK",AK,2O
+2015,10063,20443.0,1.0,0.0,0.0,6189,,,all_classes,A50,"Big Bay, AK",AK,2O
+2015,10065,20319.0,19.0,0.0,0.0,5444,,,all_classes,A52,"Silver Salmon Creek, AK",AK,2E
+2015,10065,20439.0,6.0,0.0,0.0,5774,,,all_classes,A52,"Silver Salmon Creek, AK",AK,HB
+2015,10076,20408.0,25.0,590.0,0.0,5346,3065,,all_classes,A63,"Yukon Charley Rivvers, AK",AK,5V
+2015,10085,20439.0,2.0,200.0,0.0,6056,3222,,all_classes,A72,"Chinitna Bay, AK",AK,HB
+2015,10085,20319.0,0.0,0.0,0.0,,,,all_classes,A72,"Chinitna Bay, AK",AK,2E
+2015,10096,20439.0,3.0,0.0,0.0,5980,,,all_classes,A83,"Petrof Point, AK",AK,HB
+2015,10135,20368.0,100030.0,0.0,0.0,793,,,all_classes,ABE,"Allentown/Bethlehem/Easton, PA",PA,G4
+2015,10135,20366.0,93194.0,60.0,0.0,850,3320,,all_classes,ABE,"Allentown/Bethlehem/Easton, PA",PA,EV
+2015,10135,19790.0,33013.0,1219.0,0.0,1483,2906,,all_classes,ABE,"Allentown/Bethlehem/Easton, PA",PA,DL
+2015,10135,20046.0,32616.0,2136.0,0.0,1491,2746,,all_classes,ABE,"Allentown/Bethlehem/Easton, PA",PA,ZW
+2015,10135,20397.0,30681.0,5630.0,0.0,1543,2394,,all_classes,ABE,"Allentown/Bethlehem/Easton, PA",PA,OH
+2015,10135,20427.0,23348.0,561.0,0.0,1701,3074,,all_classes,ABE,"Allentown/Bethlehem/Easton, PA",PA,PT
+2015,10135,20237.0,3409.0,0.0,0.0,2444,,,all_classes,ABE,"Allentown/Bethlehem/Easton, PA",PA,AX
+2015,10135,20304.0,2381.0,0.0,0.0,2574,,,all_classes,ABE,"Allentown/Bethlehem/Easton, PA",PA,OO
+2015,10135,19977.0,1198.0,1414.0,4142.0,2900,2862,853,all_classes,ABE,"Allentown/Bethlehem/Easton, PA",PA,UA
+2015,10135,20363.0,1157.0,0.0,0.0,2915,,,all_classes,ABE,"Allentown/Bethlehem/Easton, PA",PA,9E
+2015,10135,20448.0,837.0,0.0,0.0,3051,,,all_classes,ABE,"Allentown/Bethlehem/Easton, PA",PA,S5
+2015,10135,20452.0,757.0,0.0,0.0,3111,,,all_classes,ABE,"Allentown/Bethlehem/Easton, PA",PA,YX
+2015,10135,20355.0,408.0,0.0,0.0,3461,,,all_classes,ABE,"Allentown/Bethlehem/Easton, PA",PA,US
+2015,10135,20422.0,238.0,0.0,0.0,3842,,,all_classes,ABE,"Allentown/Bethlehem/Easton, PA",PA,SY
+2015,10135,20378.0,198.0,0.0,0.0,3955,,,all_classes,ABE,"Allentown/Bethlehem/Easton, PA",PA,YV
+2015,10135,19805.0,171.0,0.0,21.0,4041,,1248,all_classes,ABE,"Allentown/Bethlehem/Easton, PA",PA,AA
+2015,10135,20402.0,142.0,0.0,0.0,4282,,,all_classes,ABE,"Allentown/Bethlehem/Easton, PA",PA,GL
+2015,10135,20500.0,62.0,0.0,0.0,4891,,,all_classes,ABE,"Allentown/Bethlehem/Easton, PA",PA,G7
+2015,10135,20445.0,41.0,0.0,0.0,5141,,,all_classes,ABE,"Allentown/Bethlehem/Easton, PA",PA,C5
+2015,10135,21352.0,1.0,0.0,0.0,6189,,,all_classes,ABE,"Allentown/Bethlehem/Easton, PA",PA,0WQ
+2015,10135,19874.0,0.0,8576986.0,0.0,,264,,all_classes,ABE,"Allentown/Bethlehem/Easton, PA",PA,8C
+2015,10135,20107.0,0.0,16089853.0,0.0,,192,,all_classes,ABE,"Allentown/Bethlehem/Easton, PA",PA,FX
+2015,10135,20201.0,0.0,12000.0,0.0,,2060,,all_classes,ABE,"Allentown/Bethlehem/Easton, PA",PA,AMQ
+2015,10135,20372.0,0.0,62562.0,0.0,,1327,,all_classes,ABE,"Allentown/Bethlehem/Easton, PA",PA,KLQ
+2015,10135,20453.0,0.0,703507.0,0.0,,612,,all_classes,ABE,"Allentown/Bethlehem/Easton, PA",PA,ABX
+2015,10136,20398.0,85183.0,5504.0,153.0,900,2402,1175,all_classes,ABI,"Abilene, TX",TX,MQ
+2015,10136,19805.0,8859.0,1424.0,795.0,2090,2861,1058,all_classes,ABI,"Abilene, TX",TX,AA
+2015,10136,20422.0,818.0,0.0,0.0,3065,,,all_classes,ABI,"Abilene, TX",TX,SY
+2015,10136,20368.0,635.0,0.0,0.0,3215,,,all_classes,ABI,"Abilene, TX",TX,G4
+2015,10136,20452.0,463.0,0.0,0.0,3403,,,all_classes,ABI,"Abilene, TX",TX,YX
+2015,10136,19977.0,271.0,124.0,2745.0,3737,3267,913,all_classes,ABI,"Abilene, TX",TX,UA
+2015,10136,20207.0,258.0,0.0,0.0,3777,,,all_classes,ABI,"Abilene, TX",TX,XP
+2015,10136,20366.0,247.0,0.0,0.0,3807,,,all_classes,ABI,"Abilene, TX",TX,EV
+2015,10136,21167.0,202.0,0.0,0.0,3938,,,all_classes,ABI,"Abilene, TX",TX,CP (2)
+2015,10136,20310.0,140.0,0.0,0.0,4307,,,all_classes,ABI,"Abilene, TX",TX,WL
+2015,10136,20448.0,68.0,0.0,0.0,4855,,,all_classes,ABI,"Abilene, TX",TX,S5
+2015,10136,21477.0,56.0,0.0,0.0,4941,,,all_classes,ABI,"Abilene, TX",TX,VC
+2015,10136,21599.0,11.0,0.0,0.0,5598,,,all_classes,ABI,"Abilene, TX",TX,4B
+2015,10136,20107.0,0.0,500543.0,0.0,,702,,all_classes,ABI,"Abilene, TX",TX,FX
+2015,10139,20331.0,2207.0,27552.0,73654.0,2613,1683,415,all_classes,ABL,"Ambler, AK",AK,8E
+2015,10139,20336.0,2045.0,10567.0,43288.0,2648,2106,518,all_classes,ABL,"Ambler, AK",AK,H6
+2015,10139,20333.0,11.0,0.0,0.0,5598,,,all_classes,ABL,"Ambler, AK",AK,8V
+2015,10139,20169.0,0.0,46583.0,0.0,,1453,,all_classes,ABL,"Ambler, AK",AK,L2
+2015,10139,20330.0,0.0,96722.0,31154.0,,1187,579,all_classes,ABL,"Ambler, AK",AK,7S
+2015,10140,19393.0,1365406.0,2532907.0,0.0,106,412,,all_classes,ABQ,"Albuquerque, NM",NM,WN
+2015,10140,19805.0,240775.0,20779.0,124.0,430,1817,1182,all_classes,ABQ,"Albuquerque, NM",NM,AA
+2015,10140,19790.0,200078.0,47077.0,1822.0,500,1448,964,all_classes,ABQ,"Albuquerque, NM",NM,DL
+2015,10140,20304.0,192823.0,0.0,0.0,514,,,all_classes,ABQ,"Albuquerque, NM",NM,OO
+2015,10140,20378.0,138140.0,3280.0,341.0,643,2589,1131,all_classes,ABQ,"Albuquerque, NM",NM,YV
+2015,10140,19977.0,49488.0,19306.0,15063.0,1226,1846,684,all_classes,ABQ,"Albuquerque, NM",NM,UA
+2015,10140,19930.0,43629.0,24.0,0.0,1300,3358,,all_classes,ABQ,"Albuquerque, NM",NM,AS
+2015,10140,20409.0,40160.0,0.0,0.0,1353,,,all_classes,ABQ,"Albuquerque, NM",NM,B6
+2015,10140,20500.0,31916.0,0.0,0.0,1508,,,all_classes,ABQ,"Albuquerque, NM",NM,G7
+2015,10140,20448.0,31556.0,0.0,0.0,1518,,,all_classes,ABQ,"Albuquerque, NM",NM,S5
+2015,10140,20398.0,28381.0,102.0,0.0,1584,3282,,all_classes,ABQ,"Albuquerque, NM",NM,MQ
+2015,10140,20452.0,25176.0,0.0,0.0,1654,,,all_classes,ABQ,"Albuquerque, NM",NM,YX
+2015,10140,20366.0,17948.0,0.0,0.0,1853,,,all_classes,ABQ,"Albuquerque, NM",NM,EV
+2015,10140,21167.0,7544.0,0.0,0.0,2152,,,all_classes,ABQ,"Albuquerque, NM",NM,CP (2)
+2015,10140,20355.0,6032.0,274.0,9755.0,2228,3184,738,all_classes,ABQ,"Albuquerque, NM",NM,US
+2015,10140,21599.0,4549.0,0.0,0.0,2339,,,all_classes,ABQ,"Albuquerque, NM",NM,4B
+2015,10140,20368.0,1284.0,0.0,0.0,2865,,,all_classes,ABQ,"Albuquerque, NM",NM,G4
+2015,10140,20422.0,988.0,0.0,0.0,2980,,,all_classes,ABQ,"Albuquerque, NM",NM,SY
+2015,10140,21161.0,244.0,0.0,0.0,3821,,,all_classes,ABQ,"Albuquerque, NM",NM,09Q
+2015,10140,20402.0,170.0,0.0,0.0,4045,,,all_classes,ABQ,"Albuquerque, NM",NM,GL
+2015,10140,20207.0,145.0,0.0,0.0,4238,,,all_classes,ABQ,"Albuquerque, NM",NM,XP
+2015,10140,20300.0,110.0,0.0,0.0,4547,,,all_classes,ABQ,"Albuquerque, NM",NM,LW
+2015,10140,21645.0,96.0,0.0,0.0,4647,,,all_classes,ABQ,"Albuquerque, NM",NM,23Q
+2015,10140,21477.0,90.0,0.0,0.0,4683,,,all_classes,ABQ,"Albuquerque, NM",NM,VC
+2015,10140,21352.0,13.0,0.0,0.0,5556,,,all_classes,ABQ,"Albuquerque, NM",NM,0WQ
+2015,10140,19917.0,0.0,56596708.0,257791.0,,59,298,all_classes,ABQ,"Albuquerque, NM",NM,5X
+2015,10140,20107.0,0.0,23347091.0,0.0,,154,,all_classes,ABQ,"Albuquerque, NM",NM,FX
+2015,10140,20166.0,0.0,58922.0,0.0,,1354,,all_classes,ABQ,"Albuquerque, NM",NM,GFQ
+2015,10140,20201.0,0.0,0.0,0.0,,,,all_classes,ABQ,"Albuquerque, NM",NM,AMQ
+2015,10140,20263.0,0.0,1288294.0,0.0,,498,,all_classes,ABQ,"Albuquerque, NM",NM,EM
+2015,10140,20372.0,0.0,19078.0,0.0,,1851,,all_classes,ABQ,"Albuquerque, NM",NM,KLQ
+2015,10141,20304.0,26738.0,0.0,0.0,1622,,,all_classes,ABR,"Aberdeen, SD",SD,OO
