@@ -1,0 +1,15 @@
+rank_most_delay_prone,carrier_id,carrier_code,carrier_name,valid_arrivals,on_time_rate_pct,delay_min_per_flight,carrier_min_per_flight,weather_min_per_flight,nas_min_per_flight,security_min_per_flight,late_aircraft_min_per_flight,worst_month,worst_month_delay_min_per_flight
+1,20397,OH,PSA Airlines Inc.,236682,72.47,25.07,7.19,1.86,3.35,0.03,12.62,Jun,36.12
+2,20436,F9,Frontier Airlines Inc.,194192,72.09,23.56,6.55,0.69,4.48,0.0,11.85,Jun,33.31
+3,19805,AA,American Airlines Inc.,952841,74.29,21.42,7.0,1.27,3.33,0.03,9.79,Jul,33.06
+4,20368,G4,Allegiant Air,129892,75.03,21.32,6.29,2.5,3.84,0.08,8.61,Jul,27.53
+5,20409,B6,JetBlue Airways,226703,73.85,19.91,5.41,0.53,5.61,0.03,8.33,Jul,31.74
+6,20304,OO,SkyWest Airlines Inc.,825202,79.28,17.37,8.26,2.47,3.11,0.02,3.51,Dec,29.34
+7,20416,NK,Spirit Air Lines,191191,78.59,15.92,4.01,0.47,7.39,0.05,4.0,Dec,26.23
+8,19977,UA,United Air Lines Inc.,786377,78.53,15.57,3.99,0.8,5.09,0.0,5.69,Jul,26.58
+9,20452,YX,Republic Airline,334043,78.49,15.46,3.59,0.89,5.31,0.01,5.66,Jul,23.89
+10,19790,DL,Delta Air Lines Inc.,1012427,80.21,14.5,6.21,0.73,3.08,0.01,4.47,Jun,20.31
+11,20398,MQ,Envoy Air,291835,78.96,13.31,2.71,1.57,3.2,0.02,5.82,Jun,16.56
+12,19393,WN,Southwest Airlines Co.,1376837,78.6,12.19,3.2,0.36,2.36,0.03,6.25,Jul,19.1
+13,19930,AS,Alaska Airlines Inc.,241927,76.9,11.87,3.29,0.41,3.39,0.06,4.72,Jul,16.58
+14,19690,HA,Hawaiian Airlines Inc.,79335,82.72,9.16,5.65,0.29,0.11,0.04,3.06,Dec,16.57

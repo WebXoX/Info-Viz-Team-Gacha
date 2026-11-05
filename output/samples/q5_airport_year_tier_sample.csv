@@ -1,0 +1,16 @@
+year,airport_id,airport,city,passengers,departures,share_of_national_pct,rank_in_year,tier
+2025,10397,ATL,"Atlanta, GA",44231071,345195,5.2333,1,Large hub
+2025,11292,DEN,"Denver, CO",37693948,323204,4.4598,2,Large hub
+2025,11298,DFW,"Dallas/Fort Worth, TX",35110013,312298,4.1541,3,Large hub
+2025,13930,ORD,"Chicago, IL",33567189,360669,3.9716,4,Large hub
+2025,12892,LAX,"Los Angeles, CA",24889067,198252,2.9448,5,Large hub
+2025,12889,LAS,"Las Vegas, NV",24794522,188118,2.9336,6,Large hub
+2025,13204,MCO,"Orlando, FL",23988094,165468,2.8382,7,Large hub
+2025,14107,PHX,"Phoenix, AZ",23766925,202656,2.812,8,Large hub
+2025,11057,CLT,"Charlotte, NC",23617320,243118,2.7943,9,Large hub
+2025,14747,SEA,"Seattle, WA",22026535,183973,2.6061,10,Large hub
+2025,14771,SFO,"San Francisco, CA",18749853,148509,2.2184,11,Large hub
+2025,12266,IAH,"Houston, TX",17193220,169136,2.0343,12,Large hub
+2025,10721,BOS,"Boston, MA",16485347,160620,1.9505,13,Large hub
+2025,11618,EWR,"Newark, NJ",15860858,129365,1.8766,14,Large hub
+2025,13487,MSP,"Minneapolis, MN",15701246,140936,1.8577,15,Large hub
