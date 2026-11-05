@@ -9,127 +9,149 @@
 
 Our project explores U.S. domestic aviation from **2015 through 2025**, using complete calendar years. Partial 2026 data are excluded from annual comparisons. The main audience is **airline network and operations planners**, with airport operators and government planners as secondary audiences. The dashboard is designed to move from national context to state and airport comparisons, then to routes, airport types, and potential capacity–connectivity mismatches.
 
-**Changes since the original proposal:** Q1 shifts from a single-year, multiple-measure ranking to tracking airport and carrier **passenger ranking changes over time** (freight and mail remain available in EDA). Q2 emphasizes national-to-local recovery comparisons. Q3 uses **states and D.C.**, not metropolitan areas, because the available Census population data and airport mapping support consistent state-level comparisons. Q4 compares each airport's number of active nonstop destinations in 2015 with a later year. Q5 tracks the change in share of national passengers across three airport-size tiers (re-assigned every year) and the top 10 busiest airports. Q6 is split into two views: one comparing the change in traffic with the change in on-time rate for busy airports (2018 vs. 2025), and one ranking airports or carriers by delay minutes per flight and cause. Q7 has been narrowed from presumed “missed opportunities” to **potential capacity/connectivity mismatches**, supported by 2019 connectivity recovery and optional delay/carrier context.
+**Changes since the original proposal:**
 
-## 2. Data sources and common preparation
+We made a few changes to our original questions based on the data we collected and our initial analysis.
 
-| Source | Purpose | Source/access URL | Coverage used |
-|---|---|---|---|
-| BTS T-100 Domestic Segment (All Carriers) | Passenger segments, performed departures, available seats, freight, mail, origin/destination and airline IDs | https://www.transtats.bts.gov/Fields.asp?gnoyr_VQ=GEE | 2015–2025 |
-| BTS Reporting Carrier On-Time Performance | Q6 on-time rate and delay causes; signed arrival delays and completeness checks for optional Q7 context | https://transtats.bts.gov/DL_SelectFields.aspx?QO_fu146_anzr=&gnoyr_VQ=FGJ | 2015–2025 (132 monthly files); Q6 view 1 compares 2018 with 2025, Q6 view 2 uses 2025; reporting-carrier coverage only |
-| U.S. Census state annual population estimates | Q3 state passenger-segments-to-resident comparison | https://www.census.gov/programs-surveys/popest.html | Aligned to 2015–2025; two vintage series need labeling |
-| BTS airport-location reference (planned full mapping) | Airport map positions, if a map view is added | https://www.transtats.bts.gov/ | Complete lookup **not yet incorporated**; the Q4 view is a ranked bar chart and uses the origin city names already in the T-100 data, so it does not need coordinates |
+For Q1, we decided to compare airports and airlines using passenger, freight, mail, and estimated payload rankings. In Q2, we focus more on how passenger traffic recovered after 2019, both nationally and at the state and airport levels. For Q3, we changed the comparison from metropolitan areas to states because the population data was easier to match at the state level.
 
-**Preparation:** The EDA loads and standardizes T-100 segment files, retains origin/destination and airline IDs, filters to **scheduled passenger service Class F** for Q2–Q5/Q7 passenger comparisons, groups rows into the required year/airport/carrier/route grains, and exports full processed CSVs to `output/processed/` plus up-to-100-row previews under `output/samples/`. Q1 carrier rankings currently use **all service classes** and should not be compared with Class-F-only airport totals without harmonizing scope. National and state passenger counts represent **departing flight segments**, not unique travelers. A connecting traveler can be counted more than once. Do not claim that high passenger traffic per resident measures local travel demand.
+For Q4, we compare the number of nonstop destinations served by each airport in 2015 with a later year. In Q5, we look at how passenger traffic is distributed across different airport sizes and the ten busiest airports. For Q6, we decided to use two visualizations: one comparing changes in traffic and on-time performance, and another looking at delays and their causes.
 
-**Metric definitions:** Recovery index = `100 × current-year value / 2019 value`. Q4 connectivity counts **distinct destinations** with at least 52 observed departures (about one a week) from an origin during that calendar year, not a guaranteed year-round scheduled route. Passenger-to-seat proxy = `passengers / available seats`; it is **not** the BTS passenger-mile load factor and does not measure unused airport infrastructure. Carrier dominance, if analyzed, requires a matched Class-F airport × carrier × year seats table. Average signed arrival delay is available only where matching On-Time data and annual completeness checks support it. Missing delay is never zero.
+Finally, for Q7, we focus on comparing airport capacity and connectivity to identify differences that might be worth investigating further.
 
+## 2. Data Sources and Preparation
+
+We used data from the Bureau of Transportation Statistics (BTS) and the U.S. Census Bureau to study domestic aviation activity in the United States between 2015 and 2025.
+
+### Data Sources
+
+| Dataset | Description | Source |
+|---|---|---|
+| BTS T-100 Domestic Segment | Contains domestic aviation activity, including passenger numbers, departures, available seats, freight, mail, airports, and airlines. | [BTS T-100](https://www.transtats.bts.gov/Fields.asp?gnoyr_VQ=GEE) |
+| BTS Reporting Carrier On-Time Performance | Contains flight arrival information, on-time performance, cancellations, and reported causes of delays. | [BTS On-Time Performance](https://transtats.bts.gov/DL_SelectFields.aspx?QO_fu146_anzr=&gnoyr_VQ=FGJ) |
+| U.S. Census Population Estimates | Provides annual state population estimates used to compare passenger activity relative to population. | [U.S. Census Bureau](https://www.census.gov/programs-surveys/popest.html) |
+
+### Data Preparation
+
+We used Python to clean, filter, and aggregate the datasets based on the requirements of each domain question.
+
+For the T-100 dataset, we grouped the records by year, airport, airline, or route depending on the analysis. Most passenger-related questions use scheduled passenger service (Class F). For Q1, we also included other service classes to compare passenger airlines with cargo carriers.
+
+For the On-Time Performance dataset, we processed the monthly flight records to calculate on-time arrival rates, delay minutes, and reported delay causes. These results are mainly used in Q6, with additional delay information used in Q7.
+
+For the population data, we combined two Census population estimate series to cover 2015–2025. We then matched the population figures with the aviation data using the state code and year. Since the estimates come from different Census vintages, some differences between years may reflect revisions to the population estimates.
+
+The aggregated datasets for each domain question are stored in `output/processed/`. We also created smaller samples of up to 100 rows in `output/samples/` to show the structure of the processed data.
+
+### Measures Used
+
+Several additional measures were calculated from the original datasets:
+
+- **Recovery Index:** Compares passenger traffic, available seats, or departures with the corresponding value in 2019, where 2019 equals 100.
+- **Active Nonstop Destinations:** Counts the distinct destinations served by an airport with at least 52 performed departures during a calendar year.
+- **Passenger-to-Seat Ratio:** Divides the number of passengers by the available seats to estimate how much of the reported seating capacity was used.
+- **On-Time Arrival Rate:** The percentage of completed flights with a recorded arrival delay of less than 15 minutes.
+
+Passenger totals represent departing flight segments rather than unique travelers. A passenger taking a connecting flight may therefore be counted more than once. When comparing passenger activity with state population, the result reflects airport activity relative to the number of residents, not necessarily how frequently those residents travel.
 ## 3. Domain questions and visualization designs
-
 
 ### Q1. Which airports and carriers move the most passengers, freight, mail, and estimated total payload, and where do their rankings disagree?
 
-**Comparison:** We compare four measures of U.S. domestic air traffic: passengers, freight, mail, and estimated total payload carried. The primary comparison is between different measures within the same year. Users can select any year from 2015 to 2025, with 2025 as the default.
+**Data Transformation**
 
-**Unit of observation:** One airport or one carrier per year.
+For this question, we used the BTS T-100 Domestic Segment dataset from 2015 to 2025 to compare airports and airlines based on four measures: passengers, freight, mail, and estimated payload carried.
 
-**Data transformation:**
-
-We use the BTS T-100 Domestic Segment dataset covering 2015–2025. The existing data processing produces four aggregated datasets:
+We grouped the data into four datasets:
 
 1. Airport × Year (all service classes)
 2. Airport × Year (scheduled passenger service, Class F)
 3. Carrier × Year (all service classes)
 4. Airport × Carrier × Year (all service classes)
 
-For each aggregation, passengers, freight (lb), and mail (lb) are summed.
-
-Estimated payload carried is calculated using:
+For each group, we calculated the total passengers, freight, and mail. Since passenger weight is not directly included in these totals, we estimated the total payload carried using:
 
 `Estimated Payload (lb) = (Passengers × 200 lb) + Freight (lb) + Mail (lb)`
 
-The 200 lb passenger-weight assumption includes baggage. Estimated payload carried is an approximation and differs from the BTS `Payload` field, which represents available payload capacity.
+We assumed an average weight of 200 lb per passenger, including baggage. This is an estimate of the weight carried and should not be confused with the BTS Payload field, which measures available payload capacity.
 
-Airports and carriers are ranked separately for each measure within the selected year. Rank 1 indicates the highest value.
+We then ranked airports and airlines separately for each measure within each year. Rank 1 represents the highest value.
 
-The primary comparison uses all service classes to include cargo-only operations. Class F results provide an optional comparison restricted to scheduled passenger service.
+We included all service classes in the main comparison so that cargo carriers could also be considered. The Class F dataset allows us to look specifically at scheduled passenger operations.
 
-**Processing flow:**
+**Processing Flow**
 
 ```mermaid
 flowchart TD
     A["BTS T-100 Domestic Segment, 2015–2025"]
-    B["Select service-class scope: All classes or Class F"]
-    C["Aggregate by Airport × Year or Carrier × Year"]
-    D["Sum passengers, freight and mail"]
-    E["Estimate payload carried: Passengers × 200 lb + Freight + Mail"]
-    F["Rank each traffic measure within year"]
-    G["Q1 processed datasets"]
-    H["Compare passenger, freight, mail and payload rankings"]
+    B["Filter by service class"]
+    C["Group by airport/year or carrier/year"]
+    D["Calculate total passengers, freight, and mail"]
+    E["Calculate estimated payload carried"]
+    F["Rank airports and carriers for each measure"]
+    G["Export processed datasets"]
+    H["Compare rankings"]
 
     A --> B --> C --> D --> E --> F --> G --> H
 ```
 
-**Processed data samples:**
+**Processed Data Samples**
 
-- [Airport-year, all classes](https://github.com/WebXoX/Info-Viz-Team-Gacha/blob/data-processing/output/samples/q1_airports_year_all_classes_sample.csv)
-- [Airport-year, Class F](https://github.com/WebXoX/Info-Viz-Team-Gacha/blob/data-processing/output/samples/q1_airports_year_F_sample.csv)
-- [Carrier-year, all classes](https://github.com/WebXoX/Info-Viz-Team-Gacha/blob/data-processing/output/samples/q1_carriers_year_sample.csv)
-- [Airport-carrier-year, all classes](https://github.com/WebXoX/Info-Viz-Team-Gacha/blob/data-processing/output/samples/q1_airport_carrier_year_sample.csv)
+The following files contain samples of the aggregated data used for this question:
 
-**Sample data: Scheduled passenger service (Class F), 2025**
+- [Airport-Year (All Classes)](https://github.com/WebXoX/Info-Viz-Team-Gacha/blob/data-processing/output/samples/q1_airports_year_all_classes_sample.csv)
+- [Airport-Year (Class F)](https://github.com/WebXoX/Info-Viz-Team-Gacha/blob/data-processing/output/samples/q1_airports_year_F_sample.csv)
+- [Carrier-Year (All Classes)](https://github.com/WebXoX/Info-Viz-Team-Gacha/blob/data-processing/output/samples/q1_carriers_year_sample.csv)
+- [Airport-Carrier-Year (All Classes)](https://github.com/WebXoX/Info-Viz-Team-Gacha/blob/data-processing/output/samples/q1_airport_carrier_year_sample.csv)
 
-| Airport | Passengers | Freight (lb) | Mail (lb) | Passenger Rank |
-| :--- | ---: | ---: | ---: | ---: |
-| ATL | 44,231,071 | 59,787,347 | 3,034,537 | 1 |
-| DEN | 37,693,948 | 38,690,078 | 4,324,598 | 2 |
-| DFW | 35,110,013 | 37,608,346 | 4,468,268 | 3 |
-| ORD | 33,567,189 | 32,973,613 | 13,178,225 | 4 |
-| LAX | 24,889,067 | 221,181,428 | 14,289,140 | 5 |
+**Sample Data: Airport Rankings (2015, All Service Classes)**
 
-The table displays existing Class F passenger rankings. Estimated payload and its rankings still need to be calculated from the full aggregated datasets.
+| Airport | Passengers | Passenger Rank | Freight Rank | Mail Rank | Payload Rank |
+|---|---:|---:|---:|---:|---:|
+| ATL | 44,337,065 | 1 | 15 | 6 | 1 |
+| ORD | 30,673,411 | 2 | 11 | 4 | 2 |
+| DFW | 27,933,882 | 3 | 10 | 11 | 4 |
+| LAX | 26,874,558 | 4 | 5 | 3 | 3 |
+| DEN | 25,540,178 | 5 | 18 | 17 | 5 |
 
-The Q1 processing pipeline has been updated to calculate estimated payload carried using passengers × 200 lb + freight + mail. The processed datasets now include estimated payload values and their corresponding rankings for airports and carriers. Rankings are calculated within each year using the full aggregated datasets before extracting the 100-row samples.
+The table shows how an airport's ranking can change depending on the measure used. For example, Atlanta ranks first for passengers and estimated payload but fifteenth for freight. Los Angeles ranks fourth for passengers and fifth for freight.
 
-**Visualization sketches:**
+The sample above uses 2015 data from all service classes, matching the visualization sketches below. The complete processed datasets cover 2015–2025 and allow us to compare different years.
 
-**Figure 1: Airport ranking comparison (2015, all service classes)**
+**Visualization Sketches**
+
+**Figure 1: Airport Ranking Comparison (2015, All Service Classes)**
 
 ![Q1 Airport Ranking Comparison](./sketches/q1_airport_rankings.png)
 
-The chart compares airport rankings across passengers, freight, mail, and estimated payload carried.
+We plan to use a bump chart to compare airport rankings across the four measures.
 
-Airports such as Atlanta (ATL) rank highly in passenger traffic, while Memphis (MEM) and Anchorage (ANC) rank considerably higher in freight than in passengers.
+From the initial results, we can see that airports such as Atlanta (ATL) rank highly in passenger traffic, while Memphis (MEM) and Anchorage (ANC) rank much higher in freight than in passengers.
 
-This demonstrates that airports serving the most passengers are not necessarily the largest freight or mail transportation centers.
+This helps us distinguish between major passenger hubs and airports with a stronger focus on cargo operations.
 
-**Figure 2: Carrier ranking comparison (2015, all service classes)**
+**Figure 2: Carrier Ranking Comparison (2015, All Service Classes)**
 
 ![Q1 Carrier Ranking Comparison](./sketches/q1_carrier_rankings.png)
 
-The chart compares airline rankings across the same four measures.
+We will use a similar bump chart for airlines to compare their rankings across passengers, freight, mail, and estimated payload.
 
-Passenger-focused carriers such as Southwest (WN) rank highly in passenger traffic, while cargo-focused carriers such as FedEx (FX) and UPS (5X) show substantially different ranking patterns.
+For example, Southwest (WN) ranks highly for passengers, while FedEx (FX) and UPS (5X) have stronger rankings in freight transportation.
 
-This comparison highlights how airlines specialize in different transportation activities.
+**Proposed Visualization and Interaction**
 
-**Proposed visual encoding and interaction:**
+We plan to create two interactive bump charts, one for airports and another for airlines.
 
-We propose two interactive bump charts, one for airports and another for carriers.
+- **X-axis:** Passengers, freight, mail, and estimated payload carried.
+- **Y-axis:** Ranking, with rank 1 at the top.
+- **Lines:** Each line represents an airport or airline.
+- **Year selection:** Users can select a year between 2015 and 2025.
+- **Airport or airline selection:** Users can search for and compare up to five airports or airlines.
+- **Hover:** Displays the actual value and ranking for each measure.
+- **Highlighting:** Selected airports or airlines will be highlighted across all four measures.
 
-- **X-axis:** Passengers, Freight, Mail, and Estimated Payload Carried.
-- **Y-axis:** Nationwide ranking, with rank 1 at the top.
-- **Lines:** Individual airports or carriers.
-- **Default view:** Leading entities selected from the top rankings of each measure.
-- **Year selector:** 2015–2025, with 2025 as the default.
-- **Entity selection:** Users can search for and compare up to five airports or carriers.
-- **Hover:** Displays the exact metric value and corresponding national rank.
-- **Highlighting:** Selected entities are emphasized across all four measures.
+The rankings will be calculated using the full dataset before filtering the displayed airports or airlines. This ensures that selecting a smaller group does not change their original nationwide rankings.
 
-The rankings are calculated from the complete dataset before filtering the displayed entities, ensuring that selecting an airport or carrier does not change its national ranking.
-
-The visualizations are intended to help users identify differences between passenger hubs, cargo-focused airports, passenger airlines, and freight carriers.
-
+With these charts, users can compare how airports and airlines rank across different types of aviation activity rather than looking at passenger numbers alone.
 ### Q2. How has domestic passenger traffic and capacity changed nationally, by state and airport since 2015, and how did each recover relative to 2019?
 
 **Data transformation:** Aggregate Class F passengers, performed departures and seats by year nationally and airport-year; sum airport values by state when needed. Divide each series by its **own 2019 baseline** (index 100), then compute location share of the same year's national total.
@@ -156,7 +178,7 @@ flowchart LR
 
 **Figure 1: National traffic and capacity recovery (2015–2025)**
 
-![Q2 National Traffic and Capacity Recovery](./output/sketches/q2_national_recovery.png)
+![Q2 National Traffic and Capacity Recovery](./sketches/q2_national_recovery.png)
 
 The line chart compares national passenger segments, available seats, and performed departures from 2015 to 2025, using 2019 as the baseline (index = 100).
 
@@ -636,14 +658,22 @@ Delay information will be displayed only where validated data is available. Miss
 These visualizations aim to identify potential differences between airport capacity, network connectivity, and operational performance without assuming that those differences represent proven service gaps.
 
 
-## 4. Reproducibility and contribution details to finalize
+## 4. Reproducibility
 
-**Repository:** https://github.com/WebXoX/Info-Viz-Team-Gacha (confirm active branch). Place this Markdown at the repo root, and copy the included `output/samples/` and `sketches/` into the same relative paths so links render.
+The data processing for this project was carried out using Python in a Jupyter notebook. The notebook contains the steps used to clean, filter, transform, and aggregate the original datasets.
 
-**Reproduction:** Execute the primary EDA/data-processing notebook to produce full `output/processed/*.csv` tables; run the separate static Matplotlib visualization notebook against those full tables. Do not calculate totals from the 100-row samples, which exist only as report previews.
+We used two main datasets from the Bureau of Transportation Statistics (BTS): T-100 Domestic Segment and Reporting Carrier On-Time Performance. Due to their large file sizes, we have included only one raw data file from each dataset in the GitHub repository. The remaining files can be downloaded from the BTS website using the links provided in the Data Sources section.
 
-**TODO before submission:** Confirm repository access for instructors, the exact EDA notebook filename and source download versions; verify any 2025 delay joins, full airport-coordinate mapping, and Q5 cutoffs; replace draft sketches with team-original versions where required; complete team member contribution breakdown.
+The `output/processed/` directory contains the aggregated datasets prepared for each domain question. These datasets contain the information needed to create the proposed visualizations without having to repeat the entire data processing workflow.
 
-## 5. AI-use disclosure (draft for team confirmation)
+We have also included samples of up to 100 rows from the aggregated datasets in the `output/samples/` directory. These samples are provided to show the structure of the processed data and are not intended to be used for the full visualizations.
 
-ChatGPT was used to help organize and revise the report structure, write/modify Python notebook prototypes, generate 100-row excerpts of already-processed EDA tables, and produce **labeled visualization wireframe drafts**. Team members are responsible for verifying the computations and source data, creating/reviewing the required original submission sketches, interpreting results, and approving final report wording. This statement must be updated to reflect actual team use and repeated in the repository README according to course policy.
+The visualization sketches included in this report demonstrate how we plan to use the aggregated data in the final interactive dashboard.
+
+## 5. Use of AI Tools
+
+We used ChatGPT to assist with organizing the report, improving explanations, and developing parts of the Python code used for data processing and visualization.
+
+AI tools were also used to assist with the initial visualization sketches. The team reviewed the data analysis, interpretation of results, and proposed visualization approaches.
+
+The team remains responsible for the accuracy of the results and the content presented in this report.
