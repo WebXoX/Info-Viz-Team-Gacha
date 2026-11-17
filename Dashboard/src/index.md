@@ -14,12 +14,12 @@ recovery, connectivity, and operational performance.
 ## Research Questions
 
 1. [Airport and Carrier Rankings](./q1)
-2. Aviation Recovery
-3. Traffic vs Population
-4. Airport Connectivity
-5. Airport Groups
-6. On-Time Performance
-7. Capacity vs Connectivity
+2. [Aviation Recovery](./q2)
+3. [Traffic vs Population](./q3)
+4. [Airport Connectivity](./q4)
+5. [Airport Groups](./q5)
+6. [On-Time Performance](./q6)
+7. [Capacity vs Connectivity](./q7)
 
 ## Project Information
 
