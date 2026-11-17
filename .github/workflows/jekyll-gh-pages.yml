@@ -1,5 +1,5 @@
 
-name: Deploy Info Viz to GitHub Pages
+name: Deploy Observable
 
 on:
   push:
@@ -17,23 +17,43 @@ concurrency:
 
 jobs:
   deploy:
+    runs-on: ubuntu-latest
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
-    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: Dashboard/package-lock.json
+
+      - name: Install dependencies
+        working-directory: ./Dashboard
+        run: npm ci
+
+      - name: Build Observable Framework
+        working-directory: ./Dashboard
+        run: npm run build
+
+      - name: Verify generated files
+        run: |
+          ls -lah Dashboard/dist
+          test -f Dashboard/dist/index.html
+
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload Info Viz HTML pages
+      - name: Upload built website
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './Dashboard/dist'
+          path: ./Dashboard/dist
 
       - name: Deploy to GitHub Pages
         id: deployment
