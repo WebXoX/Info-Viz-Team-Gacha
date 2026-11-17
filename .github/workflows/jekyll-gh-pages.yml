@@ -1,9 +1,9 @@
 
-name: Deploy Observable
+name: Deploy Info Viz to GitHub Pages
 
 on:
   push:
-    branches: [milestone-3]
+    branches: ["milestone-3"]
   workflow_dispatch:
 
 permissions:
@@ -11,43 +11,30 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   deploy:
-    runs-on: ubuntu-latest
-
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
-    defaults:
-      run:
-        working-directory: Dashboard
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-          cache-dependency-path: dashboard/package-lock.json
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build Observable
-        run: npm run build
-
-      - name: Configure GitHub Pages
+      - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload website
+      - name: Upload Info Viz HTML pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dashboard/dist
+          path: './Dashboard/dist'
 
-      - name: Deploy website
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
